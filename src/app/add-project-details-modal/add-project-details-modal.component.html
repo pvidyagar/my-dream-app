@@ -1,0 +1,51 @@
+<div>
+	<div class ="col-lg-2"></div>
+	<div class ="col-lg-8">
+		<h1>Add Travel </h1>
+		<div class="well bs-component">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Project Details</legend>
+					<!-- <span class="closeModal">X</span> -->
+					<div class="form-group">
+						<label for="customerName" class="col-lg-4 control-label">Customer
+							Name:</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" id="customerName" [ngModelOptions]="{standalone: true}"
+								[(ngModel)]="projectInfo.customerName" placeholder="Customer Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="projectName" class="col-lg-4 control-label">Project
+							Name:</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" id="projectName"  [ngModelOptions]="{standalone: true}"
+								[(ngModel)]="projectInfo.projectName" placeholder="Project Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-lg-4 control-label">Travel Start
+							Date:</label>
+						<div class="col-lg-8">
+							<material-datepicker [(date)]="startDate" placeholder ="Start Date"  dateFormat="DD-MM-YYYY" ></material-datepicker>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-lg-4 control-label">Travel End
+							Date:</label>
+						<div class="col-lg-8">
+							<material-datepicker [(date)]="endDate" placeholder ="End Date" dateFormat="DD-MM-YYYY"></material-datepicker>
+						</div>
+					</div>
+					<div align="center" class="form-group">
+						<div class="col-lg-10 col-lg-offset-2">
+							<button type="reset" class="btn btn-default">Cancel</button>
+							<a type="submit" class="btn btn-primary" (click)='setProjectDetails()'>Next</a>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
+</div>

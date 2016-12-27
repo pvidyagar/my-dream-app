@@ -1,0 +1,81 @@
+
+
+<div class="row ">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3 bordered">
+		<h5>Project  : {{currentProject.projectName}}</h5>
+	</div>
+	<div class="col-lg-3 bordered">
+		<h5>Customer  : {{currentProject.customerName}} </h5>
+	</div>
+	<div class="col-lg-3 bordered">
+		<h5>Period : {{currentProject.startDate}} - {{currentProject.endDate}}</h5>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-5">
+		<h3>Add Travel</h3>
+		<div class="well bs-component">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Expense Details</legend>
+					<!-- <span class="closeModal">X</span> -->
+					<div class="form-group">
+						<label for="" class="col-lg-4 control-label">Expense Date:</label>
+						<div class="col-lg-8">
+							<material-datepicker [(date)]="expense.date" placeholder ="Expense Date" dateFormat="DD-MM-YYYY"></material-datepicker>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="customerName" class="col-lg-4 control-label">Expense
+							Type</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" id="expenseType"
+								[ngModelOptions]="{standalone: true}" [(ngModel)]="expense.type"
+								placeholder="Expense Type">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="textArea" class="col-lg-4 control-label">Description</label>
+						<div class="col-lg-8">
+							<textarea class="form-control" rows="3" id="textArea" 
+							[ngModelOptions]="{standalone: true}" [(ngModel)]="expense.description"
+							placeholder="Description about the expense"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="" class="col-lg-4 control-label">Amount:</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control" id="projectName"
+								[ngModelOptions]="{standalone: true}" [(ngModel)]="expense.amount"
+								placeholder="Amount">
+						</div>
+						<div class="col-lg-3">
+							<select class="form-control" id="select">
+								<option>Select</option>
+								<option>$</option>
+								<option>Rs</option>
+							</select>
+						</div>
+					</div>
+					<div align="center" class="form-group">
+						<div class="col-lg-10 col-lg-offset-2">
+							<button type="reset" class="btn btn-default">Reset</button>
+							<button type="submit" class="btn btn-primary"
+								(click)="addExpense()">Add</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
+	<div class="col-lg-5">
+		<h3>Saved Expenses</h3>
+		<app-show-expense-details-modal></app-show-expense-details-modal>
+	</div>
+</div>
+
