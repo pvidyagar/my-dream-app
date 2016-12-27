@@ -1,4 +1,5 @@
 # MyDreamApp
+This is ANgular 2 App build with redux to manage the application states
 
 This is ANgular 2 App build with redux to manage the application states
 
